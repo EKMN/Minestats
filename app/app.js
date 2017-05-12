@@ -3,10 +3,8 @@ import Chart from 'chart.js';
 import swal from 'sweetalert2'; 
 
 /* ==== app settings ==== */
-window.appas = this;
 document.onkeydown = function(e) {
     e = e || window.event;
-    console.log(e);
     switch(e.which || e.keyCode) {
         case 118:
             swal({
@@ -23,8 +21,7 @@ document.onkeydown = function(e) {
                 'The script is now polling the API \n every 10 minutes to check for changes.',
                 'success'
             ).then(function(){
-                    alert("Promise fired!");
-                    UpdateChart(0.5);
+                    UpdateChart(10);
                 })
             })
             break;
@@ -122,7 +119,7 @@ function UpdateChart(minutes) {
 
 function GetCurrentMinerate(APIURL) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", APIURL ? APIURL : "http://ethpool.org/api/miner_new/480581861e193f7e1e5683b8c491d21f0ce6f62b", true);
+    xhr.open("GET", APIURL ? APIURL : "./fetchapi.php", true);
     xhr.onload = function() {
         // everything checks out
         if (xhr.status === 200 && xhr.statusText === "OK") {
