@@ -17320,7 +17320,7 @@ document.onkeydown = function(e) {
                 'The script is now polling the API \n every 10 minutes to check for changes.',
                 'success'
             ).then(function(){
-                    UpdateChart(10);
+                    UpdateChart(1);
                 })
             })
             break;
@@ -17400,7 +17400,7 @@ const chart = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, {
             yAxes: [{
                 ticks: {
                     suggestedMax: 100,
-                    beginAtZero:true
+                    // beginAtZero:true
                 }
             }]
         }
