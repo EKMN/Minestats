@@ -99,6 +99,7 @@ const chart = new Chart(ctx, {
         scaleStepWidth:100,
         scales: {
             yAxes: [{
+                display: false,
                 ticks: {
                     suggestedMax: 100,
                     // beginAtZero:true
@@ -122,7 +123,7 @@ function UpdateChart(minutes) {
     GetCurrentMinerate();
 
     setTimeout(function() {
-        UpdateChart();
+        UpdateChart(0.5);
     }, time);
 }
 
@@ -185,7 +186,9 @@ function GetCurrentMinerate(APIURL) {
                     return "data pushed into array succesfully";
                 } else return "data did not push correctly into the array"
             })());
+            console.log(chart.data)
             chart.update();
+            setTimeout(function(){ chart.update(); }, 3000);
             return newData;
 
         }
