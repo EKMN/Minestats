@@ -87,7 +87,7 @@ var data = {
         data: mineData ? mineData : [2],
     }]
 };
-var chart = new Chart(ctx, {
+const chart = new Chart(ctx, {
     type: 'line',
     data: data,
     options: {
@@ -95,8 +95,17 @@ var chart = new Chart(ctx, {
         maintainAspectRatio: false,
         showLines: true,
         spanGaps: true,
+        scaleStartValue:0,
+        scaleStepWidth:100,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    suggestedMax: 100,
+                    beginAtZero:true
+                }
+            }]
+        }
     }
-
 });
 
 // updates chart with random information

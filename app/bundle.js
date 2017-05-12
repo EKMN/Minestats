@@ -17386,7 +17386,7 @@ var data = {
         data: mineData ? mineData : [2],
     }]
 };
-var chart = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, {
+const chart = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, {
     type: 'line',
     data: data,
     options: {
@@ -17394,8 +17394,17 @@ var chart = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, {
         maintainAspectRatio: false,
         showLines: true,
         spanGaps: true,
+        scaleStartValue:0,
+        scaleStepWidth:100,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    suggestedMax: 100,
+                    beginAtZero:true
+                }
+            }]
+        }
     }
-
 });
 
 // updates chart with random information
