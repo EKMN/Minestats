@@ -186,9 +186,11 @@ function GetCurrentMinerate(APIURL) {
                     return "data pushed into array succesfully";
                 } else return "data did not push correctly into the array"
             })());
-            console.log(chart.data)
+            console.log(chart.data);
+            if (chart.data.datasets[0].data.length !== chart.data.labels.length){
+                alert("Desync happened during" + newDate);
+            }
             chart.update();
-            setTimeout(function(){ chart.update(); }, 3000);
             return newData;
 
         }
