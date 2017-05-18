@@ -5,7 +5,6 @@ header('Content-Type: application/json; charset=utf-8');
 try {
     $JSON = file_get_contents(APIURL);
     echo $JSON;
-    http_response_code(429);
 } catch(Exception $e){
     http_response_code(429);
 }
