@@ -18,6 +18,3 @@ if (argv.master) {
   console.log('No valid argument specified. Not running anything')
   process.exit(1)
 }
-
-// instead of this, create an empty array, perhaps called "arguments", and then run multiple ifs and simply fill the array with
-// the flags and values, if they exist
