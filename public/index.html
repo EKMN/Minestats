@@ -48,7 +48,7 @@
         white-space: nowrap;
         text-overflow: ellipsis;
       }
-      .server:last-child {
+      li:nth-child(3n) {
         margin-bottom: 0;
       }
       .server:nth-child(odd) {
@@ -80,26 +80,34 @@
       [v-cloak] {
         display: none;
       }
+      .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s
+      }
+      .fade-enter, .fade-leave-to {
+        opacity: 0
+      }
     </style>
   </head>
   <body>
   <!-- <canvas id="chart"></canvas> -->
   <div id="app">
-    <div v-if="servers.length > 0" v-cloak>
-      <div class="server-catalog">
-        <div class="server" v-for="(server, index) in servers">
-          <div class="server--name">
-            {{ server.name }} <span class="server--online-status"></span>
+    <transition name="fade">
+      <div v-if="servers.length > 0" v-cloak>
+        <transition-group name="fade" class="server-catalog">
+          <div class="server" v-for="(server, index) in servers" :key="index">
+            <div class="server--name">
+              {{ server.name }} <span class="server--online-status"></span>
+            </div>
+            <div class="server--uid">
+              {{ server.UID }}
+            </div>
+            <div class="server--hashrate">
+              {{ server.hashrate }} <span>MH/s</span>
+            </div>
           </div>
-          <div class="server--uid">
-            {{ server.UID }}
-          </div>
-          <div class="server--hashrate">
-            {{ server.hashrate }} <span>MH/s</span>
-          </div>
-        </div>
+        </transition-group>
       </div>
-    </div>
+    </transition>
   </div>
   <script src="./bundle.js" defer></script>
   </body>
