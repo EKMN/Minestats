@@ -1,4 +1,4 @@
-# Minestats
+# Minestats [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 Ethereum mining dashboard
 ![Dashboard GUI](https://d.pr/i/POsOgd+)
