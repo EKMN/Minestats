@@ -2,6 +2,7 @@ import * as io from 'socket.io-client'
 import _ from 'lodash'
 import Noty from 'noty'
 import Vue from 'vue'
+import draggable from 'vuedraggable'
 
 // connects to our client namespace.
 const socket = io.connect('/client')
@@ -90,7 +91,7 @@ socket.on('slaveDisconnected', (UID) => {
   }
 })
 
-// starts our vue app
+// starts our  vue app
 const app = new Vue({
   el: '#app',
   data: {
@@ -100,6 +101,9 @@ const app = new Vue({
     update () {
       this.$forceUpdate()
     }
+  },
+  components: {
+    draggable
   }
 })
 // exposes our app

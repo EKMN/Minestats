@@ -25,34 +25,21 @@
       .server-catalog {
         display: flex;
         flex-flow: row wrap;
-        padding: 15px;
-        width: calc(100vw - 30px);
+        padding: 7.5px;
+        width: calc(100vw - 15px);
       }
       .server {
         background: white;
         margin-bottom: 15px;
         padding: 15px;
         border-radius: 4px;
-        width: 100%;
+        margin: 7.5px;
+        width: calc(50% - 45px);
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-      }
-      .server {
-        background: white;
-        margin-bottom: 15px;
-        padding: 15px;
-        border-radius: 4px;
-        width: calc(50% - 38px);
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-      li:nth-child(3n) {
-        margin-bottom: 0;
-      }
-      .server:nth-child(odd) {
-        margin-right: 15px;
+        cursor: pointer;
+        user-select: none;
       }
       .server--name {
         color: #4b6cb6;
@@ -93,19 +80,21 @@
   <div id="app">
     <transition name="fade">
       <div v-if="servers.length > 0" v-cloak>
-        <transition-group name="fade" class="server-catalog">
-          <div class="server" v-for="(server, index) in servers" :key="index">
-            <div class="server--name">
-              {{ server.name }} <span class="server--online-status"></span>
+        <draggable>
+          <transition-group name="fade" class="server-catalog">
+            <div class="server" v-for="(server, index) in servers" :key="index">
+              <div class="server--name">
+                {{ server.name }} <span class="server--online-status"></span>
+              </div>
+              <div class="server--uid">
+                {{ server.UID }}
+              </div>
+              <div class="server--hashrate">
+                {{ server.hashrate }} <span>MH/s</span>
+              </div>
             </div>
-            <div class="server--uid">
-              {{ server.UID }}
-            </div>
-            <div class="server--hashrate">
-              {{ server.hashrate }} <span>MH/s</span>
-            </div>
-          </div>
-        </transition-group>
+          </transition-group>
+        </draggable>
       </div>
     </transition>
   </div>

@@ -25,7 +25,8 @@
     "randomstring": "^1.1.5",
     "socket.io": "^2.0.3",
     "sweetalert2": "^6.6.2",
-    "vue": "^2.4.2"
+    "vue": "^2.4.2",
+    "vuedraggable": "^2.14.1"
   },
   "devDependencies": {
     "standard": "^10.0.3"
