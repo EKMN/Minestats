@@ -1,0 +1,11 @@
+/*
+  Styles using BEM
+  http://getbem.com/naming/
+*/
+@import 'gotham-rounded-ss.css';
+
+html, body {
+  font-family: "Gotham Rounded SSm A", "Gotham Rounded SSm B", sans-serif;
+  margin: 0;
+  padding: 0;
+}

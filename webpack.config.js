@@ -1,11 +1,17 @@
-var path = require('path');
+const path = require('path')
 
 module.exports = {
-  entry: './app/app.js',
+  entry: 'app.js',
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'app'),
-    library: 'app',
-    libraryTarget: 'var'
+    filename: './public/bundle.js'
+  },
+  resolve: {
+    modules: ['node_modules', path.resolve(__dirname, 'source/js')],
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
+  },
+  node: {
+    fs: 'empty'
   }
-};
+}
