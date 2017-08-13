@@ -17,13 +17,13 @@ Install all dependencies
 cd Minestats && npm install
 ```
 
-Spawn a few slave listeners
+Spawn a few slave instances
 
 ```bash
 node server --slave --name miner01
 ```
 
-Then start a master-controller`
+Then start a master-controller
 
 ```bash
 node server --master
