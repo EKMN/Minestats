@@ -80,7 +80,7 @@
   <!-- <canvas id="chart"></canvas> -->
   <div id="app">
     <transition name="fade">
-      <div v-if="servers.length > 0" v-cloak>
+      <div v-if="servers.length" v-cloak>
         <draggable>
           <transition-group name="fade" class="server-catalog">
             <div class="server" v-for="(server, index) in servers" :key="index">
